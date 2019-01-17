@@ -10,7 +10,7 @@ var bodyParser   = require("body-parser");
 var path         = require("path");
 var mongoose     = require("mongoose");
 
-//ansluta till databasen birds
+//ansluta till databasen birds Mlab
 mongoose.connect("mongodb://Marwile:Stork2019@ds157834.mlab.com:57834/birds", { useNewUrlParser : true }); 
 mongoose.Promise = global.Promise;
 
@@ -90,7 +90,7 @@ app.post("/api/birds/add", function(req, res){
 });
 
 
-// delete kurs
+// delete bird
 app.delete("/api/birds/delete/:id", function (req, res){
    Birds.deleteOne({ _id: req.params.id} , function(err){
         if(err){
