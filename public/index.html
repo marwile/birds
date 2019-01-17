@@ -7,17 +7,11 @@
     <title>Fågelskådning</title>
     <!-- Compiled and minified CSS materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-
-   <link rel="stylesheet" href="style.css" type="text/css"/>   
-   
+    <link rel="stylesheet" href="style.css" type="text/css"/>      
 </head>
 <body>
   <div id="wrapper">
-    
-
- 
-    <h1>Fågelskådning</h1>
+   <h1>Fågelskådning</h1>
    
     <div id="app">
 
@@ -26,75 +20,63 @@
                   <div class="card blue-grey darken-1" v-for ="bird in birds">
                     <div class="card-content white-text">
                       <span class="card-title"> {{bird.birdName}}</span>
-                      <ul>
-                        <li>var:  {{bird.birdPlace}}</li>
-                        <li>när:  {{bird.birdMonth}} {{bird.birdYear}}</li>
+                        <ul>
+                          <li>var:  {{bird.birdPlace}}</li>
+                          <li>när:  {{bird.birdMonth}} {{bird.birdYear}}</li>
 
-                      </ul>
-                      <p> {{bird.birdUser}}</p>
-                     
+                        </ul>
+                      <p> {{bird.birdUser}}</p> 
                     </div>
                     <div class="card-action">
                       <a v-bind:href="bird.birdLink" target="_blank">{{bird.birdName}} på Wikipedia</a>
                   
-                     
                     </div>
                   </div>
                 </div>
               </div>
-
-
-
-
-
  
+      
+    <h2>Fågel jag skådat:</h2>
+    <form>
+        <label for="birdName">Fågel: </label>
+        <br>
+        <input type="text" id="birdName" name="birdName">
+        <br>
 
+        <label for="birdPlace">Plats: </label>
+        <br>
+        <input type="text" id="birdPlace" name="birdPlace">
+        <br>
 
-  
-  
-<h2>Fågel jag skådat:</h2>
-<form>
-    <label for="birdName">Fågel: </label>
-    <br>
-    <input type="text" id="birdName" name="birdName">
-    <br>
+        <label for="birdMonth">Månad: </label>
+        <br>
+        <input type="text" id="birdMonth" name="birdMonth">
+        <br>
+        <label for="birdYear">År: </label>
+        <br>
+        <input type="number" id="birdYear" name="birdYear">
+        <br>
 
-    <label for="birdPlace">Plats: </label>
-    <br>
-    <input type="text" id="birdPlace" name="birdPlace">
-    <br>
+        <label for="birdUser">Mitt namn: </label>
+        <br>
+        <input type="text" id="birdUser" name="birdUser">
+        <br>
 
-    <label for="birdMonth">Månad: </label>
-    <br>
-    <input type="text" id="birdMonth" name="birdMonth">
-    <br>
-    <label for="birdYear">År: </label>
-    <br>
-    <input type="number" id="birdYear" name="birdYear">
-    <br>
+        <label for="birdLink">Länk till mer info: </label>
+        <br>
+        <input type="text" id="birdLink" name="birdLink">
+        <br>
 
-    <label for="birdUser">Mitt namn: </label>
-    <br>
-    <input type="text" id="birdUser" name="birdUser">
-    <br>
+        <button onclick="addBird()">Lägg till</button>
+    </form>
 
-    <label for="birdLink">Länk till mer info: </label>
-    <br>
-    <input type="text" id="birdLink" name="birdLink">
-    <br>
-
-    <button onclick="addBird()">Lägg till</button>
-</form>
-
-
-
-
+    </div>
+  </div>
 </div>
-</div>
-</div>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
- <script> 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<!-- production version, optimized for size and speed -->
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script> 
  
  new Vue({
     el: '#app',
@@ -116,7 +98,5 @@
 <!--jquery ajaxanrop  -->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
 <script src="js/main.js"></script>
-  
-  
 </body>
 </html>
