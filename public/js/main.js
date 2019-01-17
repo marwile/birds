@@ -9,23 +9,6 @@ maria ågren 2019
 
 
 
-/*
-window.onload = loadList();
-
-//hämta lista med alla fåglar
-function loadList(){
-
-    $.getJSON("http://localhost:3000/api/birds/", function(data){
-
-
-        $("#list").html(""); // ta bort data och sätt tom sträng
-        for (var i = 0; i< data.length; i++){
-            $("#list").append("<tr><td>" + data[i].birdName +"</td><td>"+ data[i].birdPlace + "</td><td>" + data[i].birdMonth+"</td><td>"+ data[i].birdYear + "</td><td>"+ data[i].birdUser + "</td><td>"+ data[i].birdLink + "</td><td id='remove' onclick= 'deleteBird(\"" +data[i]._id+"\")'>&#x1f5d1;</td></tr>");
-        }
-    })
-}
-*/
-
 // Lägg till fågel
 function addBird(event) {
     // Läs in värden
@@ -39,7 +22,7 @@ function addBird(event) {
     // AJAX-anrop
     $.ajax({
         type: "POST",
-        url: "http://localhost:3000/api/birds/add/",
+        url: "https://thawing-island-33722.herokuapp.com/api/birds/add/",
         data: { birdName: birdNameValue, birdPlace: birdPlaceValue, birdMonth: birdMonthValue, birdYear: birdYearValue, birdUser: birdUserValue, birdLink: birdLinkValue }
     }).done(function(response) {
         console.log(response);
@@ -57,11 +40,11 @@ function addBird(event) {
     });
 }
 
-//delete kurs
+//delete fågel
 function deleteBird(id) {
     $.ajax({
         type:"DELETE",
-        url: "http://localhost:3000/api/birds/delete/"+id
+        url: "https://thawing-island-33722.herokuapp.com/api/birds/delete/"+id
     }).done(function(response){
         console.log(response);
 
