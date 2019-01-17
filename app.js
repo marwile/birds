@@ -101,15 +101,23 @@ app.delete("/api/birds/delete/:id", function (req, res){
         });
    });
 
+//port heroku
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
 
-//port för anslutning
+/*/port för anslutning
 var port = 3000;
 
 //start server
 app.listen(port, function(){
     console.log("Server startades på port" + port);
+    
+  
 });
-
+ */ 
 
 
 
