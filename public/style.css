@@ -1,0 +1,36 @@
+/*
+projekt
+dt162g
+maria ågren 2019
+*/
+body{
+    padding:0;
+    margin:0;
+}
+
+#wrapper{
+    max-width:80%;
+    margin-left:auto;
+    margin-right:auto;
+}
+h1{
+    text-align:center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:6em;
+}
+h2{
+    text-align:center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size:4em;
+}
+button{
+    background-color: white;
+    padding:1em;
+    margin:2em;
+}
+@media only screen and (max-width: 655px){
+    #wrapper{
+        width:100%;
+    }
+   
+}
