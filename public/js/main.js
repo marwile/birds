@@ -34,9 +34,7 @@ function addBird(event) {
         document.getElementById("birdYear").value = "";
         document.getElementById("birdUser").value = "";
         document.getElementById("birdLink").value = "";
-        
-        // Ladda om listan
-    //    loadList();
+    
     });
 }
 
