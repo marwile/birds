@@ -92,7 +92,7 @@ app.post("/api/birds/add", function(req, res){
 
 // delete bird
 app.delete("/api/birds/delete/:id", function (req, res){
-   Birds.deleteOne({ _id: req.params.id} , function(err){
+   Birds.deleteBird({ _id: req.params.id} , function(err){
         if(err){
             res.json(err);
         } else {
